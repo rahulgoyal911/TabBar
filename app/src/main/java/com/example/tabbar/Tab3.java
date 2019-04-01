@@ -86,10 +86,25 @@ public class Tab3 extends Fragment {
         super.onActivityCreated(savedInstanceState);
         recyclerView = (RecyclerView) view.findViewById(R.id.rView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
 
         List<ModalClass> modalClassList = new ArrayList<>();
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
         modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
         modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
         modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
