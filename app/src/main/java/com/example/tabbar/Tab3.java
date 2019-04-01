@@ -90,12 +90,11 @@ public class Tab3 extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         List<ModalClass> modalClassList = new ArrayList<>();
-        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
 
         AdapterRecycler adapterRecycler = new AdapterRecycler(modalClassList);
         recyclerView.setAdapter(adapterRecycler);
