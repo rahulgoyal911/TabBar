@@ -3,14 +3,22 @@ package com.example.tabbar;
 
 
 import android.content.Context;
+import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -22,6 +30,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Tab3 extends Fragment {
+    RecyclerView recyclerView;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +39,7 @@ public class Tab3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    View view;
     private OnFragmentInteractionListener mListener;
 
     public Tab3() {
@@ -68,7 +77,32 @@ public class Tab3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab3, container, false);
+        view = inflater.inflate(R.layout.fragment_tab3, container, false);
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+
+        List<ModalClass> modalClassList = new ArrayList<>();
+        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.ic_launcher_background,"Rahul","Goyal"));
+
+        AdapterRecycler adapterRecycler = new AdapterRecycler(modalClassList);
+        recyclerView.setAdapter(adapterRecycler);
+        adapterRecycler.notifyDataSetChanged();
+
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
