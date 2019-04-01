@@ -5,11 +5,17 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 
 /**
@@ -25,6 +31,7 @@ public class Tab2 extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    View view;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -57,17 +64,27 @@ public class Tab2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        lv= (ListView)getActivity().findViewById(R.id.lview);
+//        lv = (ListView)getActivity().findViewById(R.id.lview);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab2, container, false);
+        view = inflater.inflate(R.layout.fragment_tab2, container, false);
+        return view;
+    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        ListView lv = (ListView) view.findViewById(R.id.lview);
+        String[] list = {"rahul","Goyal","priya","asdfg","rahul","Goyal","priya","asdfg","rahul","Goyal","priya","asdfg","rahul","Goyal","priya","asdfg"};
+        ListAdapter arrayAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
+        lv.setAdapter(arrayAdapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -76,12 +93,13 @@ public class Tab2 extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
+
+
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -93,6 +111,8 @@ public class Tab2 extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+
 
     /**
      * This interface must be implemented by activities that contain this

@@ -1,10 +1,18 @@
 package com.example.tabbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -16,10 +24,11 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         setContentView(R.layout.activity_main);
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_camera_alt_black_24dp));
+        tabLayout.addTab(tabLayout.newTab().setText("CHATS"));
+        tabLayout.addTab(tabLayout.newTab().setText("STATUS"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
 
         final ViewPager viewPager = (ViewPager)findViewById(R.id.viewPager);
         final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
@@ -41,7 +50,16 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
             }
         });
+//
+
     }
+
+
+
+    //    Button b = (Button)findViewById(R.id.btn);
+
+
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {

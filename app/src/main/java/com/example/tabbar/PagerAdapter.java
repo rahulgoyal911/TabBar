@@ -2,6 +2,9 @@
 
 package com.example.tabbar;
 
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
