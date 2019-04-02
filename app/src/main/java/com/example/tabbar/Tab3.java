@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -86,30 +87,22 @@ public class Tab3 extends Fragment {
         super.onActivityCreated(savedInstanceState);
         recyclerView = (RecyclerView) view.findViewById(R.id.rView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-
+        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(
+               view.getContext()
+        ));
         List<ModalClass> modalClassList = new ArrayList<>();
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
-        modalClassList.add(new ModalClass(R.drawable.ic_camera_alt_black_24dp,"Rahul","Goyal"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
+        modalClassList.add(new ModalClass(R.drawable.jeff,"Jeff","Bezos"));
 
         AdapterRecycler adapterRecycler = new AdapterRecycler(modalClassList);
         recyclerView.setAdapter(adapterRecycler);
